@@ -108,11 +108,13 @@ def create_one_on_one_tasks(config, this_week_id, members_tasks, unmatched_membe
         )
 
     while len(members_tasks) > 1:
-        member1 = members_tasks.pop().get("assignee")
-        name1 = member_name(member1)
+        member_task_1 = members_tasks.pop()
+        member1 = member_task_1.get("assignee")
+        name1 = member_task_1.get("name")
 
-        member2 = members_tasks.pop().get("assignee")
-        name2 = member_name(member2)
+        member_task_2 = members_tasks.pop()
+        member2 = member_task_2.get("assignee")
+        name2 = member_task_2.get("name")
 
         one_on_one_task = config.client.tasks.add_subtask(
             this_week_id,
@@ -132,7 +134,7 @@ def create_one_on_one_tasks(config, this_week_id, members_tasks, unmatched_membe
 
     if unmatched_member_task:
         unmatched_member = unmatched_member_task.get("assignee")
-        name = member_name(unmatched_member)
+        name = unmatched_member_task.get("name")
         config.client.tasks.add_subtask(
             this_week_id,
             {

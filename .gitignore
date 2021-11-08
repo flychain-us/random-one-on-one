@@ -120,3 +120,6 @@ v-env/
 
 # VSCode
 .vscode
+
+# Script
+script/

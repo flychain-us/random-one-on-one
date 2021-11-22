@@ -67,8 +67,8 @@ def filter_by_frequency(members):
         "Never": False,
         "Every week": True,
         "Every 2 weeks": number_of_weeks % 2 == 0,
-        "Every 3 weeks": number_of_weeks % 3 == 0,
-        "Every 4 weeks": number_of_weeks % 4 == 0,
+        "Every month": number_of_weeks % 4 == 0,
+        "Every 2 months": number_of_weeks % 8 == 0,
     }
 
     def _should_participate_this_week(member):

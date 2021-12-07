@@ -63,6 +63,7 @@ def prioritize_unmatched(config, members, unmatched_id):
 
 def filter_by_frequency(members):
     number_of_weeks = (datetime.now().date() - datetime(2019, 1, 1).date()).days // 7
+    print(number_of_weeks)
     switch = {
         "Never": False,
         "Every week": True,
